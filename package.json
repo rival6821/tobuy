@@ -1,0 +1,33 @@
+{
+  "name": "tobuy",
+  "version": "1.0.0",
+  "description": "살것 개인 프로젝트입니다.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rival6821/tobuy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rival6821/tobuy/issues"
+  },
+  "homepage": "https://github.com/rival6821/tobuy#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-js-minify": "0.0.3",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.0",
+    "run-sequence": "^2.2.1"
+  }
+}
