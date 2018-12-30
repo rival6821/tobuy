@@ -1,6 +1,15 @@
 header{
     height: 3rem;
-    padding: 0 1.8rem;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background-color: #fff;
+    z-index: 2;
+    .inner{
+        position: relative;
+        padding: 0 1.8rem;
+    }
     div{
         line-height:3rem;
     }

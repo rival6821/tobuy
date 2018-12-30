@@ -14,8 +14,10 @@
 	<script src="<?php echo base_url(); ?>vendor/jquery-3.3.1.min.js" type="text/javascript"></script>
 </head>
 <body>
-<header class="clearfix">
-    <div id="logo">살것 리스트</div>
-    <div id="login" class="log">로그인</div>
-    <div id="logout" class="log d-none">로그아웃</div>
+<header>
+    <div class="inner clearfix">
+        <div id="logo">살것 리스트</div>
+        <div id="login" class="log">로그인</div>
+        <div id="logout" class="log d-none">로그아웃</div>
+    </div>
 </header>
