@@ -6,10 +6,13 @@ header{
     }
     #logo{
         float:left;
+        font-weight:bold;
     }
     .log{
         float:right;
         text-align: right;
         cursor:pointer;
+        font-size: 0.9rem;
+        color: #666;
     }
 }
