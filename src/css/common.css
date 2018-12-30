@@ -1,154 +1,99 @@
-@charset "UTF-8";
-body,
-html {
-  width: 100%; }
-
-* {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
-  width: 100%; }
+  line-height: 1; }
 
 ol, ul {
   list-style: none; }
 
-.bold {
-  font-weight: bold; }
+blockquote, q {
+  quotes: none; }
 
-.pointer {
-  cursor: pointer; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
 
-.inline-block {
-  display: inline-block; }
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
 
-/* .clearfix{
-    @include clearfix;
-} */
-a, a:hover, a:focus, a:active, a:visited, a:link {
-  color: #333;
-  text-decoration: none !important; }
+body {
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid red; }
 
-span.red {
-  color: red; }
-
-.wrap-loading {
-  /*화면 전체를 어둡게 합니다.*/
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  /*not in ie */
-  filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#20000000', endColorstr='#20000000');
-  /* ie */
-  z-index: 501; }
-
-.wrap-loading div {
-  /*로딩 이미지*/
-  position: fixed;
-  /* 
-    top:50%;
-    left:50%; */
-  top: 35%;
-  left: 37%;
-  margin-left: -21px;
-  margin-top: -21px;
-  z-index: 502; }
-  .wrap-loading div img {
-    /*         width:150px;
-height:150px; */
-    z-index: 503; }
-
-.v-mid {
-  vertical-align: middle;
-  display: inline-block; }
-
-.display-none {
-  /*감추기*/
+.d-none {
   display: none; }
 
-.btn-white {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  cursor: pointer; }
-  .btn-white:hover {
-    background-color: #f8f8f8; }
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }
 
-.btn-black {
-  background-color: #333;
-  cursor: pointer;
-  color: #fff !important; }
-  .btn-black:hover {
-    background-color: #666; }
-
-.tableTop {
-  padding: 10px 0px; }
-  .tableTop .left {
-    float: left;
-    display: inline-block;
-    font-size: 18px; }
-  .tableTop .right {
+header {
+  height: 3rem;
+  padding: 0 1.8rem; }
+  header div {
+    line-height: 3rem; }
+  header #logo {
+    float: left; }
+  header .log {
     float: right;
-    display: inline-block; }
-    .tableTop .right .select {
-      width: 100px;
-      vertical-align: middle; }
-      .tableTop .right .select.viewSelect {
-        width: 120px; }
-    .tableTop .right .search {
-      width: 200px;
-      vertical-align: middle; }
-    .tableTop .right .form-control {
-      display: inline-block; }
+    text-align: right;
+    cursor: pointer; }
 
-.table.omni {
-  text-align: center;
-  border-bottom: 1px solid #e9ecef; }
-  .table.omni > thead {
-    border-top: 2px solid #333;
-    font-weight: bold; }
-  .table.omni > tbody td {
-    padding: 8px 12px;
-    vertical-align: middle; }
-
-.table-pagenation.omni {
-  position: relative;
-  height: 60px; }
-  .table-pagenation.omni .deletebtn {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #f36a6a;
-    padding: 8px 20px; }
-  .table-pagenation.omni .noticeWrite {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #53cfc8; }
-  .table-pagenation.omni .page-item {
-    margin-right: 2px; }
-  .table-pagenation.omni .page-link {
-    border: none;
-    border-radius: 5px !important;
-    margin: 0;
-    cursor: pointer;
-    background-color: transparent; }
-    .table-pagenation.omni .page-link:hover {
-      background-color: #333;
+#mainWrap {
+  padding: 0 1.8rem; }
+  #mainWrap #inputPage {
+    height: 3rem;
+    border: 1px solid #ddd; }
+    #mainWrap #inputPage input {
+      border: 0;
+      outline: 0;
+      width: 80%;
+      height: 3rem;
+      font-size: 1.5rem;
+      padding-left: 0.5rem;
+      float: left;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box; }
+    #mainWrap #inputPage .inputBtn {
+      display: block;
+      cursor: pointer;
+      height: 3rem;
+      width: 18%;
+      float: right;
+      line-height: 3rem;
+      text-align: center;
+      background-color: #20A3FF;
       color: #fff; }
-    .table-pagenation.omni .page-link.active {
-      cursor: not-allowed; }
-  .table-pagenation.omni li.disabled.page-item > a {
-    position: relative;
-    display: block;
-    line-height: 1.25;
-    padding: .5rem .75rem;
-    border: none;
-    border-radius: 5px !important;
-    margin: 0;
-    cursor: not-allowed;
-    background-color: #333;
-    color: #fff; }

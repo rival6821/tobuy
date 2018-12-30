@@ -1,171 +1,66 @@
-body,
-html {
-  width: 100%;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-*{margin:0;padding:0;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-  font-family: 'Noto Sans KR', sans-serif;
-  width:100%;
+	line-height: 1;
 }
 ol, ul {
 	list-style: none;
 }
-.bold{
-  font-weight: bold;
+blockquote, q {
+	quotes: none;
 }
-.pointer{
-    cursor: pointer;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
-.inline-block{
-    display: inline-block;
-}
-/* .clearfix{
-    @include clearfix;
-} */
-a,a:hover,a:focus,a:active,a:visited,a:link{
-	color:$black;
-	text-decoration: none !important;
-}
-span.red{
-    color: red;
-}
-.wrap-loading{ /*화면 전체를 어둡게 합니다.*/
-    position: fixed;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    background: rgba(0,0,0,0.3); /*not in ie */
-    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#20000000', endColorstr='#20000000');    /* ie */
-    z-index:501;
-}
-.wrap-loading div{ /*로딩 이미지*/
-    position: fixed;/* 
-    top:50%;
-    left:50%; */
-    top:35%;
-    left:37%;
-    margin-left: -21px;
-    margin-top: -21px;
-    z-index:502;
-    img{
-/*         width:150px;
-height:150px; */
-    	z-index:503;
-    }
-}
-.v-mid{
-    vertical-align: middle;
-    display: inline-block;
-}
-.display-none{ /*감추기*/
-    display:none;
-}
-//AJAX 로딩
-.btn-white{
-    background-color: $white;
-    border:1px solid #ddd;
-    cursor: pointer;
-    &:hover{
-        background-color: #f8f8f8;
-    }
-}
-.btn-black{
-    background-color: #333;
-    cursor: pointer;
-    color: #fff !important;
-    &:hover{
-        background-color: #666;
-    }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-////
-.tableTop{
-    padding: 10px 0px;
-    .left{
-        float: left;
-        display: inline-block;
-        font-size: $font-3;
-    }
-    .right{
-        float: right;
-        display: inline-block;
-        .select{
-            width:100px;
-            vertical-align: middle;
-            &.viewSelect{
-                width:120px;
-            }
-        }
-        .search{
-            width:200px;
-            vertical-align: middle;
-        }
-        .form-control{
-            display: inline-block;
-        }
-    }
-}
-.table.omni{
-    text-align: center;
-    border-bottom: 1px solid #e9ecef;
-    &>thead{
-        border-top:2px solid #333;
-        font-weight: bold;
-    }
-    &>tbody{
-        td{
-            padding:8px 12px;
-            vertical-align: middle;
-        }
-    }
-}
-.table-pagenation.omni{
+body{
+    max-width:500px;
+    width:100%;
     position: relative;
-    height: 60px;
-    .deletebtn{
-        position: absolute;
-        top:0;
-        left:0;
-        color: $color-2;
-        padding:8px 20px;
-    }
-    .noticeWrite{
-        position: absolute;
-        top:0;
-        right:0;
-        color: $color-1;
-    }
-    .page-item{
-        margin-right: 2px;
-    }
-    .page-link{
-        border : none;
-        border-radius: 5px !important;
-        margin:0;
-        cursor: pointer;
-        background-color: transparent;
-        &:hover{
-            background-color: #333;
-            color: #fff;
-        }
-        &.active{
-            cursor: not-allowed;
-        }
-    }
-    li.disabled.page-item{
-        &>a{
-            position: relative;
-            display: block;
-            line-height: 1.25;
-            padding: .5rem .75rem;
-            border : none;
-            border-radius: 5px !important;
-            margin:0;
-            cursor: not-allowed;
-            background-color: #333;
-            color: #fff;
-        }
-    }
+    margin:0 auto;
+    border:1px solid red;
 }
-////TABLE
+
+.d-none{
+    display: none;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
