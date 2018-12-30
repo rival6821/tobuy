@@ -8,10 +8,10 @@
     <meta name="description" content="살것 리스트">
 
     <!-- common css -->
-    <link rel="stylesheet" href="<?=base_url()?>dist/css/common.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>dist/css/common.css">
 
     <!-- jquery -->
-	<script src="<?=base_url()?>vendor/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url(); ?>vendor/jquery-3.3.1.min.js" type="text/javascript"></script>
 </head>
 <body>
 <header class="clearfix">
