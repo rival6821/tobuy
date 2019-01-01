@@ -69,7 +69,9 @@ header {
   z-index: 2; }
   header .inner {
     position: relative;
-    padding: 0 1.8rem; }
+    padding: 0 1.8rem;
+    max-width: 500px;
+    margin: 0 auto; }
   header div {
     line-height: 3rem; }
   header #logo {
@@ -115,3 +117,40 @@ footer {
       text-align: center;
       background-color: #20A3FF;
       color: #fff; }
+  #mainWrap #listWrap .list {
+    height: 3rem;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative; }
+    #mainWrap #listWrap .list .info {
+      height: 3rem;
+      line-height: 3rem;
+      float: left;
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+    #mainWrap #listWrap .list.on .info {
+      width: calc( 100% - 6rem); }
+    #mainWrap #listWrap .list .clicked {
+      float: right;
+      width: 6rem;
+      display: none; }
+      #mainWrap #listWrap .list .clicked .buy, #mainWrap #listWrap .list .clicked .delete {
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        height: 3rem;
+        line-height: 3rem;
+        color: #fff;
+        text-align: center; }
+      #mainWrap #listWrap .list .clicked .buy {
+        background-color: #20A3FF; }
+      #mainWrap #listWrap .list .clicked .delete {
+        background-color: #999999; }
+    #mainWrap #listWrap .list.on .clicked {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }

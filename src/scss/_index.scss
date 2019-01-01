@@ -28,4 +28,50 @@
             color:#fff;
         }
     }
+    #listWrap{
+
+        .list{
+            height:3rem;
+            border-top: 1px solid #ededed;
+            border-bottom: 1px solid #ededed;
+            box-sizing: border-box;
+            position: relative;
+            .info{
+                @include fix-height(3rem);
+                float: left;
+                width:100%;
+                text-overflow : ellipsis;
+                white-space:nowrap;
+                overflow : hidden;
+            }
+            &.on{
+                .info{
+                    width: calc( 100% - 6rem );
+                }
+            }
+            .clicked{
+                float:right;
+                width:6rem;
+                display: none;
+                .buy,.delete{
+                    flex:1;
+                    @include fix-height(3rem);
+                    color:#fff;
+                    text-align: center;
+                }
+                .buy{
+                    background-color: $color-1;
+                }
+                .delete{
+                    background-color: $color-2;
+                }
+            }
+            &.on{
+                .clicked{
+                    display: flex;
+                }
+            }
+        }
+    }
+
 }
