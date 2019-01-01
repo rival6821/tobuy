@@ -17,7 +17,18 @@
 <header>
     <div class="inner clearfix">
         <div id="logo">살것 리스트</div>
-        <div id="login" class="log">로그인</div>
+        <div id="login" class="log" onclick="modal('show');">로그인</div>
         <div id="logout" class="log d-none">로그아웃</div>
     </div>
 </header>
+<div id="loginModal">
+    <div class="contents">
+        <div class="title">비밀번호 입력</div>
+        <div class="close" onclick="modal('hide');"><img src="dist/img/close.png" alt="close"></div>
+        <div class="password">
+            <input type="password" name="password">
+        </div>
+        <div class="loginBtn">로그인</div>
+    </div>
+</div>
+<div id="modalBG" onclick="modal('hide');"></div>

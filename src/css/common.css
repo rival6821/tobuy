@@ -84,6 +84,58 @@ header {
     font-size: 0.9rem;
     color: #666; }
 
+#loginModal {
+  display: none;
+  z-index: 11;
+  position: fixed;
+  width: 80%;
+  height: 11rem;
+  left: 10%;
+  top: 6rem;
+  background: #fff;
+  border-radius: 0.2rem; }
+  #loginModal .contents {
+    text-align: center;
+    margin: 1rem 0;
+    position: relative; }
+    #loginModal .contents .title {
+      font-weight: bold; }
+    #loginModal .contents .close {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      width: 13px;
+      height: 13px; }
+      #loginModal .contents .close img {
+        width: 100%; }
+    #loginModal .contents .password {
+      border: 1px solid #ededed;
+      height: 2rem;
+      line-height: 2rem;
+      margin: 1.5rem; }
+      #loginModal .contents .password input {
+        width: 90%;
+        padding-left: 0.1rem;
+        border: 0;
+        outline: 0; }
+    #loginModal .contents .loginBtn {
+      background-color: #20A3FF;
+      color: #fff;
+      text-align: center;
+      height: 2rem;
+      line-height: 2rem;
+      margin: 1.5rem; }
+
+#modalBG {
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none; }
+
 footer {
   height: 2.5rem;
   line-height: 2.5rem;

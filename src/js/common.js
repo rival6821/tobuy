@@ -1,6 +1,15 @@
-function textSubmit(){
-	let text = $('input[name=]')
+function modal(text){
+	let loginModal = document.getElementById('loginModal');
+	let modalBG = document.getElementById('modalBG');
+	if(text=='show'){
+		loginModal.style.display = 'block';
+		modalBG.style.display = 'block';
+	}else if(text=='hide'){
+		loginModal.style.display = 'none';
+		modalBG.style.display = 'none';
+	}
 }
+//  로그인 모달 
 
 $(function(){
 
@@ -30,5 +39,9 @@ $(function(){
 		return false;
 	});
 	//삭제 클릭
+
+	$('#login').click(function(){
+
+	});
 
 });
