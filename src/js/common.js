@@ -1,3 +1,7 @@
+function textSubmit(){
+	let text = $('input[name=]')
+}
+
 $(function(){
 
 	let listClickCnt = 0;
@@ -7,6 +11,9 @@ $(function(){
 			listClickCnt++;
 		}else if(listClickCnt==1 && $(this).hasClass('on')){
 			$(this).removeClass('on');
+			listClickCnt--;
+		}else if(listClickCnt==1 && !$(this).hasClass('on')){
+			$('#listWrap .list.on').removeClass('on');
 			listClickCnt--;
 		}
 	});

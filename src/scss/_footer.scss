@@ -1,4 +1,60 @@
 footer{
-	height: 1rem;
-	line-height: 1rem;
+	@include fix-height(2.5rem);
+	background-color: #fafafa;
+	width:100%;
+	position:fixed;
+	bottom:0;
+	left:0;
+	z-index:2;
+	.inner{
+		max-width:500px;
+        margin:0 auto;
+        position: relative;
+        height:100%;
+        .center{
+        	color:$color-2;
+        	text-align: center;
+        	width:100%;
+        	font-size:0.7rem;
+        }
+        .left{
+        	position: absolute;
+        	top:0;
+        	left:0.5rem;
+        	width:1.5rem;
+        	height:1.5rem;
+        	padding:0.5rem;
+        	cursor: pointer;
+        	img{
+				width:100%;
+				vertical-align: top;
+        	}
+        }
+        .right{
+			position: absolute;
+        	top:0;
+        	right:0.5rem;
+        	width:3.5rem;
+        	height:1.5rem;
+        	padding:0.5rem;
+        	cursor: pointer;
+        	.innerImg{
+				width:100%;
+				position: relative;
+				a{
+	        		width:45%;
+	        		cursor:pointer;
+	        		img{
+	        			width:100%;
+	        		}
+	        	}
+	        	a:first-child{
+	        		float:left;
+	        	}
+	        	a:last-child{
+	        		float:right;
+	        	}
+        	}
+        }
+	}
 }
