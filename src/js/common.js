@@ -107,49 +107,53 @@ $(function(){
 
 	//구매 클릭
 	$('#listWrap').on('click','.buy',function(){
-		let idx = $(this).attr('data-idx');
-		$.ajax({
-			url:'./main/buyAction',
-			data:{
-				idx:idx
-			},
-			type:'post',
-			success:(res)=>{
-				if(res=='success'){
-					alert('구매처리 되었습니다');
-					listReload();
-				}else{
-					alert(res);
+		if(confirm('구매처리 하시겠습니까?')){
+			let idx = $(this).attr('data-idx');
+			$.ajax({
+				url:'./main/buyAction',
+				data:{
+					idx:idx
+				},
+				type:'post',
+				success:(res)=>{
+					if(res=='success'){
+						alert('구매처리 되었습니다');
+						listReload();
+					}else{
+						alert(res);
+					}
+				},
+				error:(a,b,c)=>{
+					console.log(a);console.log(b);console.log(c);
 				}
-			},
-			error:(a,b,c)=>{
-				console.log(a);console.log(b);console.log(c);
-			}
-		});
+			});
+		}
 		return false;
 	});
 	
 	//삭제 클릭
 	$('#listWrap').on('click','.delete',function(){
-		let idx = $(this).attr('data-idx');
-		$.ajax({
-			url:'./main/deleteAction',
-			data:{
-				idx:idx
-			},
-			type:'post',
-			success:(res)=>{
-				if(res=='success'){
-					alert('삭제처리 되었습니다');
-					listReload();
-				}else{
-					alert(res);
+		if(confirm('삭제처리 하시겠습니까?')){
+			let idx = $(this).attr('data-idx');
+			$.ajax({
+				url:'./main/deleteAction',
+				data:{
+					idx:idx
+				},
+				type:'post',
+				success:(res)=>{
+					if(res=='success'){
+						alert('삭제처리 되었습니다');
+						listReload();
+					}else{
+						alert(res);
+					}
+				},
+				error:(a,b,c)=>{
+					console.log(a);console.log(b);console.log(c);
 				}
-			},
-			error:(a,b,c)=>{
-				console.log(a);console.log(b);console.log(c);
-			}
-		});
+			});
+		}
 		return false;
 	});
 
