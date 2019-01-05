@@ -9,8 +9,8 @@
 		<div class="list clearfix">
 			<div class="info"><?php echo $row['text']; ?></div>
 			<div class="clicked">
-				<div class="buy">구매</div>
-				<div class="delete">삭제</div>
+				<div class="buy" data-idx="<?php echo $row['idx']; ?>">구매</div>
+				<div class="delete" data-idx="<?php echo $row['idx']; ?>">삭제</div>
 			</div>
 		</div>
 		<?php } ?>

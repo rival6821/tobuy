@@ -6,6 +6,7 @@
         border-top: 1px solid #ededed;
         border-bottom: 1px solid #ededed;
         box-sizing: border-box;
+        display: none;
         input{
             border:0;
             outline:0;
@@ -29,7 +30,6 @@
         }
     }
     #listWrap{
-
         .list{
             height:3rem;
             border-top: 1px solid #ededed;

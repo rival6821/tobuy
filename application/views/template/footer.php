@@ -1,3 +1,7 @@
+<div id="addBtn">
+	<img src="dist/img/new.png" alt="addBtn" onclick="$('#inputPage').toggle();$('body').scrollTop(0);">
+</div>
+
 <footer>
 	<div class="inner">
 
