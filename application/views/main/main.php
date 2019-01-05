@@ -8,10 +8,10 @@
 	<div id="listWrap">
 		
 		<?php foreach ($lists as $row) { ?>
-		<div class="list clearfix">
-			<div class="info <?php 
+		<div class="list clearfix <?php 
 	if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){
-		 ?>log<?php } ?>"><?php echo $row['text']; ?></div>
+		 ?>log<?php } ?>">
+			<div class="info"><?php echo $row['text']; ?></div>
 
 		<?php if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){  ?>
 			<div class="clicked">

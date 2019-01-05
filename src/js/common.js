@@ -62,6 +62,13 @@ function textSubmit(){
 	}
 }
 
+// 로그아웃
+function logout(){
+	if(confirm('로그아웃 하시겠습니까?')){
+		location.href='./main/logout';
+	}
+}
+
 $(function(){
 
 	//리스트 클릭시 구매 및 삭제 뜨게

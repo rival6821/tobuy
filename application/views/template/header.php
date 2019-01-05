@@ -17,8 +17,12 @@
 <header>
     <div class="inner clearfix">
         <div id="logo">살것 리스트</div>
-        <div id="login" class="log" onclick="modal('show');">로그인</div>
-        <div id="logout" class="log d-none">로그아웃</div>
+        <?php if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){  ?>
+            <div id="logout" class="log" onclick="logout();">로그아웃</div>
+        <?php }else{ ?>
+            <div id="login" class="log" onclick="modal('show');">로그인</div>
+        <?php } ?>        
+        
     </div>
 </header>
 <div id="loginModal">

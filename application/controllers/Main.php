@@ -64,5 +64,11 @@ class Main extends CI_Controller {
 		}
 	}
 
+	// 로그아웃
+	public function logout(){
+		session_destroy();
+		redirect('main','refresh');
+	}
+
 
 }
