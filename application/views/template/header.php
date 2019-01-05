@@ -26,9 +26,9 @@
         <div class="title">비밀번호 입력</div>
         <div class="close" onclick="modal('hide');"><img src="dist/img/close.png" alt="close"></div>
         <div class="password">
-            <input type="password" name="password">
+            <input type="password" name="password" onkeypress="if(event.keyCode==13){login(); return false;}">
         </div>
-        <div class="loginBtn">로그인</div>
+        <div class="loginBtn" onclick="login()">로그인</div>
     </div>
 </div>
 <div id="modalBG" onclick="modal('hide');"></div>

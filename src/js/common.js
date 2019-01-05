@@ -11,6 +11,33 @@ function modal(text){
 	}
 }
 
+//	로그인 기능
+function login(){
+	let password = $('input[name=password]').val();
+	if($.trim(password).length>0){
+		$.ajax({
+			url:'./main/login',
+			data:{
+				password:password
+			},
+			type:'post',
+			success:(res)=>{
+				if(res == 'success'){
+					location.reload();
+				}else{
+					alert('비밀번호를 확인해주세요');
+				}
+
+			},
+			error:(a,b,c)=>{
+				console.log(a);console.log(b);console.log(c);
+			}
+		});
+	}else{
+		alert('비밀번호를 입력해주세요');
+	}
+}
+
 //살것 내용 등록
 function textSubmit(){
 	let text = $.trim($('input[name=newbuy]').val());
@@ -98,11 +125,6 @@ $(function(){
 			}
 		});
 		return false;
-	});
-	
-
-	$('#login').click(function(){
-
 	});
 
 });

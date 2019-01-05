@@ -1,6 +1,11 @@
+<?php 
+	if(isset($_SESSION['is_login'])){
+		if($_SESSION['is_login'] == 'true'){ ?>
 <div id="addBtn">
 	<img src="dist/img/new.png" alt="addBtn" onclick="$('#inputPage').toggle();$('body').scrollTop(0);">
-</div>
+</div
+<?php } } ?>
+>
 
 <footer>
 	<div class="inner">

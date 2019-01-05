@@ -35,4 +35,22 @@ class Main extends CI_Controller {
 		echo ($this->main_model->update_list($idx,'delete') == '1')? 'success':'error01';
 	}
 
+	//	로그인 ajax
+	public function login(){
+		$user_pw = $this->input->post('password');
+		$user_pw1 = hash("sha256",$user_pw);
+		$user_pw1 = strtoupper($user_pw1);
+		$result = $this->main_model->get_login($user_pw1);
+		if($result == 1 ){
+			$newdata = array(
+				'is_login' => 'true'
+			);
+			$this->session->set_userdata($newdata);
+			echo "success";
+		}else{
+			echo "fail";
+		}
+	}
+
+
 }

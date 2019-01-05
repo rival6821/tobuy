@@ -30,5 +30,11 @@ class Main_model extends CI_Model {
     	return $this->db->affected_rows();
     }
 
+    // 로그인
+    public function get_login($pw){
+    	$sql = "select count(*) as cnt from tb_admin where password = ?";
+    	return $this->db->query($sql,$pw)->row()->cnt;
+    }
+
 }
  ?>
