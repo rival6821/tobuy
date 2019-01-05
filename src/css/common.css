@@ -253,8 +253,8 @@ footer {
         -webkit-box-flex: 1;
             -ms-flex: 1;
                 flex: 1;
-        height: 3rem;
-        line-height: 3rem;
+        height: calc(3rem - 2px);
+        line-height: calc(3rem - 2px);
         color: #fff;
         text-align: center; }
       #mainWrap #listWrap .list .clicked .buy {

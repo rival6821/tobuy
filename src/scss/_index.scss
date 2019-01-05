@@ -55,7 +55,7 @@
                 display: none;
                 .buy,.delete{
                     flex:1;
-                    @include fix-height(3rem);
+                    @include fix-height(calc(3rem - 2px));
                     color:#fff;
                     text-align: center;
                 }
