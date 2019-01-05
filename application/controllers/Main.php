@@ -19,20 +19,32 @@ class Main extends CI_Controller {
 
 	//	살것 입력 ajax
 	public function textSubmit(){
-		$text = $this->input->post('text');
-		echo ($this->main_model->insert_list($text))? 'success':'error01';
+		if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){
+			$text = $this->input->post('text');
+			echo ($this->main_model->insert_list($text))? 'success':'error01';
+		}else{
+			echo 'error02';
+		}
 	}
 
 	//	구매 클릭 ajax
 	public function buyAction(){
-		$idx = $this->input->post('idx');
-		echo ($this->main_model->update_list($idx,'buy') == '1')? 'success':'error01';
+		if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){
+			$idx = $this->input->post('idx');
+			echo ($this->main_model->update_list($idx,'buy') == '1')? 'success':'error01';
+		}else{
+			echo 'error02';
+		}
 	}
 
 	//	삭제 클릭 ajax
 	public function deleteAction(){
-		$idx = $this->input->post('idx');
-		echo ($this->main_model->update_list($idx,'delete') == '1')? 'success':'error01';
+		if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){
+			$idx = $this->input->post('idx');
+			echo ($this->main_model->update_list($idx,'delete') == '1')? 'success':'error01';
+		}else{
+			echo 'error02';
+		}
 	}
 
 	//	로그인 ajax

@@ -67,6 +67,10 @@ $(function(){
 	//리스트 클릭시 구매 및 삭제 뜨게
 	let listClickCnt = 0;
 	$('#listWrap .list').click(function(){
+		if(!$(this).hasClass('log')){
+			alert('로그인 후 사용가능합니다');
+			return false;
+		}
 		if(listClickCnt==0 && !$(this).hasClass('on')){
 			$(this).addClass('on');
 			listClickCnt++;
