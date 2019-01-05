@@ -50,7 +50,9 @@ function textSubmit(){
 			type:'post',
 			success:(res)=>{
 				if(res=='success'){
-					location.reload();
+					$('#inputPage').hide();
+					$('input[name=newbuy]').val('');
+					listReload();
 				}else{
 					alert(res);
 				}
@@ -67,6 +69,19 @@ function logout(){
 	if(confirm('로그아웃 하시겠습니까?')){
 		location.href='./main/logout';
 	}
+}
+
+//	리스트 새로고침
+function listReload(){
+	$.ajax({
+		url:'./main/listReload',
+		success:(res)=>{
+			$('#listWrap').html(res);
+		},
+		error:(a,b,c)=>{
+			console.log(a);console.log(b);console.log(c);
+		}
+	});
 }
 
 $(function(){
@@ -102,7 +117,7 @@ $(function(){
 			success:(res)=>{
 				if(res=='success'){
 					alert('구매처리 되었습니다');
-					location.reload();
+					listReload();
 				}else{
 					alert(res);
 				}
@@ -126,7 +141,7 @@ $(function(){
 			success:(res)=>{
 				if(res=='success'){
 					alert('삭제처리 되었습니다');
-					location.reload();
+					listReload();
 				}else{
 					alert(res);
 				}

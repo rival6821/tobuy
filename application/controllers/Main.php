@@ -70,5 +70,30 @@ class Main extends CI_Controller {
 		redirect('main','refresh');
 	}
 
+	//	리스트 새로고침 ajax
+	public function listReload(){
+		if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){
+			$login = true;
+		}else{
+			$login = false;
+		}
+		$lists = $this->main_model->get_list();
+		$result = "";
+		foreach ($lists as $row){
+			$result .= "<div class='list clearfix ";
+			if($login){
+				$result .= "log";
+			}
+			$result .= "'><div class='info'>";
+			$result .= $row['text'];
+			$result .= "</div>";
+			if($login){
+				$result .= "<div class='clicked'><div class='buy' data-idx='".$row['idx']."'>구매</div><div class='delete' data-idx='".$row['idx']."'>삭제</div></div>";
+			}
+			$result .= "</div>";
+		}
+		echo $result;
+	}
+
 
 }
