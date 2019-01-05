@@ -88,7 +88,7 @@ $(function(){
 
 	//리스트 클릭시 구매 및 삭제 뜨게
 	let listClickCnt = 0;
-	$('#listWrap .list').click(function(){
+	$('#listWrap').on('click','.list',function(){
 		if(!$(this).hasClass('log')){
 			alert('로그인 후 사용가능합니다');
 			return false;
@@ -106,7 +106,7 @@ $(function(){
 	});
 
 	//구매 클릭
-	$('.clicked .buy').click(function(){
+	$('#listWrap').on('click','.buy',function(){
 		let idx = $(this).attr('data-idx');
 		$.ajax({
 			url:'./main/buyAction',
@@ -130,7 +130,7 @@ $(function(){
 	});
 	
 	//삭제 클릭
-	$('.clicked .delete').click(function(){
+	$('#listWrap').on('click','.delete',function(){
 		let idx = $(this).attr('data-idx');
 		$.ajax({
 			url:'./main/deleteAction',
