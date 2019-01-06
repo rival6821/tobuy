@@ -22,9 +22,9 @@ class Main_model extends CI_Model {
     //	리스트 정보 업데이트
     public function update_list($idx,$type){
     	if($type == 'buy'){
-    		$sql = "update tb_list set is_buy = 'y', optdate = now() where idx = ?";
+    		$sql = "update tb_list set is_buy = 'y', buy_date = now() where idx = ?";
     	}else if($type == 'delete'){
-    		$sql = "update tb_list set is_delete = 'y', optdate = now() where idx = ?";
+    		$sql = "update tb_list set is_delete = 'y', delete_date = now() where idx = ?";
     	}
     	$this->db->query($sql,$idx);
     	return $this->db->affected_rows();
