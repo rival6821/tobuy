@@ -8,7 +8,12 @@
 <footer>
 	<div class="inner">
 
-		<div class="left"><img src="dist/img/list01.png" alt="menu"></div>
+		<div class="left"
+		<?php 
+	if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){ ?>
+		id="beforeList"
+<?php } ?>
+		><img src="dist/img/list01.png" alt="menu"></div>
 
 		<div class="center">Copyright &copy; By leeilhoon</div>
 
