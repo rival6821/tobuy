@@ -162,9 +162,10 @@ $(function(){
 		if($(this).hasClass('before')){
 			$(this).removeClass('before');
 			$('#beforeList img').attr('src','dist/img/list01.png');
-			$.ajax({
-				url:'./main/before'
-			});
+			/*$.ajax({
+				url:'./main/before',
+
+			});*/
 		}else{
 			$(this).addClass('before');
 			$('#beforeList img').attr('src','dist/img/list02.png');
