@@ -49,6 +49,10 @@
                     width: calc( 100% - 6rem );
                 }
             }
+            &.nolist{
+                text-align: center;
+                @include fix-height(3rem);
+            }
             .clicked{
                 float:right;
                 width:6rem;

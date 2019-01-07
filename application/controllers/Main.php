@@ -79,6 +79,9 @@ class Main extends CI_Controller {
 		}
 		$lists = $this->main_model->get_list();
 		$result = "";
+		if(count($lists)==0){
+			$result = "<div class='list nolist'>목록이 없습니다.</div>";
+		}
 		foreach ($lists as $row){
 			$result .= "<div class='list clearfix ";
 			if($login){

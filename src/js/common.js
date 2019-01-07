@@ -5,6 +5,7 @@ function modal(text){
 	if(text=='show'){
 		loginModal.style.display = 'block';
 		modalBG.style.display = 'block';
+		$('input[name=password]').focus();
 	}else if(text=='hide'){
 		loginModal.style.display = 'none';
 		modalBG.style.display = 'none';
@@ -27,7 +28,6 @@ function login(){
 				}else{
 					alert('비밀번호를 확인해주세요');
 				}
-
 			},
 			error:(a,b,c)=>{
 				console.log(a);console.log(b);console.log(c);
@@ -77,6 +77,7 @@ function listReload(){
 		url:'./main/listReload',
 		success:(res)=>{
 			$('#listWrap').html(res);
+			$('#addBtn').removeClass('out');
 		},
 		error:(a,b,c)=>{
 			console.log(a);console.log(b);console.log(c);
@@ -89,15 +90,21 @@ $(function(){
 	//리스트 클릭시 구매 및 삭제 뜨게
 	let listClickCnt = 0;
 	$('#listWrap').on('click','.list',function(){
+		if($(this).hasClass('nolist')){
+			return false;
+		}
 		if(!$(this).hasClass('log')){
 			alert('로그인 후 사용가능합니다');
 			return false;
 		}
+		let $addBtn = $('#addBtn');
 		if(listClickCnt==0 && !$(this).hasClass('on')){
 			$(this).addClass('on');
+			$addBtn.addClass('out');
 			listClickCnt++;
 		}else if(listClickCnt==1 && $(this).hasClass('on')){
 			$(this).removeClass('on');
+			$addBtn.removeClass('out');
 			listClickCnt--;
 		}else{
 			$('#listWrap .list.on').removeClass('on');
@@ -117,7 +124,6 @@ $(function(){
 				type:'post',
 				success:(res)=>{
 					if(res=='success'){
-						alert('구매처리 되었습니다');
 						listReload();
 					}else{
 						alert(res);
@@ -143,7 +149,6 @@ $(function(){
 				type:'post',
 				success:(res)=>{
 					if(res=='success'){
-						alert('삭제처리 되었습니다');
 						listReload();
 					}else{
 						alert(res);

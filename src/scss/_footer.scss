@@ -65,6 +65,10 @@ footer{
     z-index:2;
     width:4rem;
     height:4rem;
+    transition: right 0.5s;
+    &.out{
+        right:-5rem;
+    }
     img{
         width:100%;
         cursor:pointer;
