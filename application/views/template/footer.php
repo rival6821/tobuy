@@ -26,6 +26,6 @@
 
 	</div>
 </footer>
-<script src="dist/js/common.js" type="text/javascript"></script>
+<script src="dist/js/common.js?v=20190107" type="text/javascript"></script>
 </body>
 </html>
