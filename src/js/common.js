@@ -180,16 +180,26 @@ $(function(){
 
 	//	이전 리스트 보기
 	$('#beforeList').click(function(){
-		if($(this).hasClass('before')){
-			$(this).removeClass('before');
-			$('#beforeList img').attr('src','dist/img/list01.png');
-			/*$.ajax({
-				url:'./main/before',
-
-			});*/
-		}else{
+		if(!$(this).hasClass('before')){
 			$(this).addClass('before');
 			$('#beforeList img').attr('src','dist/img/list02.png');
+			$.ajax({
+				url:'./main/before',
+				success:(res)=>{
+					$('#listWrap').html(res);
+					$('#addBtn').addClass('out');
+					$('#logo').text('이전 리스트');
+				},
+				error:(a,b,c)=>{
+					console.log(a);console.log(b);console.log(c);
+				}
+			});
+		}else{
+			$(this).removeClass('before');
+			$('#beforeList img').attr('src','dist/img/list01.png');
+			$('#addBtn').removeClass('out');
+			$('#logo').text('살것 리스트');
+			listReload();
 		}
 	});
 

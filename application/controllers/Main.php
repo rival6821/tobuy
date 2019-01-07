@@ -98,5 +98,30 @@ class Main extends CI_Controller {
 		echo $result;
 	}
 
+	//	이전 리스트 뿌려주기 ajax
+	public function before(){
+		if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){
+			$lists = $this->main_model->get_before_model();
+			$result = "";
+			if(count($lists)==0){
+				$result = "<div class='beforelist nolist'>목록이 없습니다.</div>";
+			}
+			foreach ($lists as $row){
+				$result .= "<div class='beforelist'><div class='info'>";
+				$result .= "<span class='";
+				$result .= ($row['is_buy']=='y')? 'buy':'cancel';
+				$result .= "'>";
+				$result .= ($row['is_buy']=='y')? '구매':'취소';
+				$result .= "</span>".$row['text']."</div>";
+				$result .= "<div class='optionDate'>";
+				$result .= ($row['is_buy']=='y')? substr($row['buy_date'], 0,10) : substr($row['delete_date'], 0,10);
+				$result .= "</div></div>";
+			}
+			echo $result;
+		}else{
+			echo 'error';
+		}
+	}
+
 
 }

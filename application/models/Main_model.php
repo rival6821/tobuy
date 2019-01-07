@@ -36,5 +36,11 @@ class Main_model extends CI_Model {
     	return $this->db->query($sql,$pw)->row()->cnt;
     }
 
+    // 이전 리스트 정보 가져오기
+    public function get_before_model(){
+        $sql = "select * from tb_list where is_buy = 'y' or is_delete = 'y' order by regdate desc";
+        return $this->db->query($sql)->result_array();
+    }
+
 }
  ?>
