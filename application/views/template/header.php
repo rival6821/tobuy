@@ -18,9 +18,9 @@
     <div class="inner clearfix">
         <div id="logo">살것 리스트</div>
         <?php if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){  ?>
-            <div id="logout" class="log" onclick="logout();">로그아웃</div>
+            <div id="logout" class="log" onclick="javascript:logout();">로그아웃</div>
         <?php }else{ ?>
-            <div id="login" class="log" onclick="modal('show');">로그인</div>
+            <div id="login" class="log" onclick="javascript:modal('show');">로그인</div>
         <?php } ?>        
         
     </div>
@@ -28,11 +28,11 @@
 <div id="loginModal">
     <div class="contents">
         <div class="title">비밀번호 입력</div>
-        <div class="close" onclick="modal('hide');"><img src="dist/img/close.png" alt="close"></div>
+        <div class="close" onclick="javascript:modal('hide');"><img src="dist/img/close.png" alt="close"></div>
         <div class="password">
             <input type="password" name="password" onkeypress="if(event.keyCode==13){login(); return false;}">
         </div>
-        <div class="loginBtn" onclick="login()">로그인</div>
+        <div class="loginBtn" onclick="javascript:login()">로그인</div>
     </div>
 </div>
-<div id="modalBG" onclick="modal('hide');"></div>
+<div id="modalBG" onclick="javascript:modal('hide');"></div>
