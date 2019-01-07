@@ -89,7 +89,7 @@ $(function(){
 
 	//리스트 클릭시 구매 및 삭제 뜨게
 	let listClickCnt = 0;
-	$('#listWrap').on('touchstart click','.list',function(){
+	$('#listWrap').on('touch click','.list',function(){
 		if($(this).hasClass('nolist')){
 			return false;
 		}
@@ -117,7 +117,7 @@ $(function(){
 	});
 
 	//	살것 등록하기 버튼 클릭
-	$('#addBtn').on('touchstart click',function(){
+	$('#addBtn').on('touch click',function(){
 		if($('#inputPage').css('display')=='none'){
 			$('#inputPage').css('display','flex');
 			$('body').scrollTop(0);
@@ -129,7 +129,7 @@ $(function(){
 	});
 
 	//구매 클릭
-	$('#listWrap').on('touchstart click','.buy',function(){
+	$('#listWrap').on('touch click','.buy',function(){
 		if(confirm('구매처리 하시겠습니까?')){
 			let idx = $(this).attr('data-idx');
 			$.ajax({
@@ -154,7 +154,7 @@ $(function(){
 	});
 	
 	//삭제 클릭
-	$('#listWrap').on('touchstart click','.delete',function(){
+	$('#listWrap').on('touch click','.delete',function(){
 		if(confirm('삭제처리 하시겠습니까?')){
 			let idx = $(this).attr('data-idx');
 			$.ajax({
@@ -179,7 +179,7 @@ $(function(){
 	});
 
 	//	이전 리스트 보기
-	$('#beforeList').on('touchstart click',function(){
+	$('#beforeList').on('touch click',function(){
 		if(!$(this).hasClass('before')){
 			$(this).addClass('before');
 			$('#beforeList img').attr('src','dist/img/list02.png');
