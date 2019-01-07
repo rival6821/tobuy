@@ -10,20 +10,16 @@
         input{
             border:0;
             outline:0;
-            width:80%;
+            flex:4;
             height:2.9rem;
             font-size:1.2rem;
-            padding-left:0.5rem;
-            float:left;
             box-sizing: border-box;
         }
         .inputBtn{
             display: block;
             cursor:pointer;
-            height:3rem;
-            width:18%;
-            float:right;
-            line-height:3rem;
+            flex:1;
+            @include fix-height(2.9rem);
             text-align: center;
             background-color: $color-1;
             color:#fff;
@@ -36,6 +32,7 @@
             border-bottom: 1px solid #ededed;
             box-sizing: border-box;
             position: relative;
+            overflow: hidden;
             .info{
                 @include fix-height(3rem);
                 float: left;
@@ -54,9 +51,12 @@
                 @include fix-height(3rem);
             }
             .clicked{
-                float:right;
+                position:absolute;
+                top:0;
+                right:-10rem;
                 width:6rem;
-                display: none;
+                display: flex;
+                transition :right 0.3s;
                 .buy,.delete{
                     flex:1;
                     @include fix-height(calc(3rem - 2px));
@@ -72,7 +72,7 @@
             }
             &.on{
                 .clicked{
-                    display: flex;
+                    right:0rem;
                 }
             }
         }

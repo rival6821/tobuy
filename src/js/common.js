@@ -97,6 +97,10 @@ $(function(){
 			alert('로그인 후 사용가능합니다');
 			return false;
 		}
+		if($('#inputPage').css('display')=='flex'){
+			$('#inputPage').css('display','none');
+			$('input[name=newbuy]').val('');
+		}
 		let $addBtn = $('#addBtn');
 		if(listClickCnt==0 && !$(this).hasClass('on')){
 			$(this).addClass('on');
@@ -109,6 +113,18 @@ $(function(){
 		}else{
 			$('#listWrap .list.on').removeClass('on');
 			$(this).addClass('on');
+		}
+	});
+
+	//	살것 등록하기 버튼 클릭
+	$('#addBtn').click(function(){
+		if($('#inputPage').css('display')=='none'){
+			$('#inputPage').css('display','flex');
+			$('body').scrollTop(0);
+			$('input[name=newbuy]').focus();
+		}else{
+			$('#inputPage').css('display','none');
+			$('input[name=newbuy]').val('');
 		}
 	});
 

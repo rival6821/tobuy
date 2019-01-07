@@ -83,7 +83,7 @@ class Main extends CI_Controller {
 			$result = "<div class='list nolist'>목록이 없습니다.</div>";
 		}
 		foreach ($lists as $row){
-			$result .= "<div class='list clearfix ";
+			$result .= "<div class='list ";
 			if($login){
 				$result .= "log";
 			}

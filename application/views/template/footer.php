@@ -1,7 +1,7 @@
 <?php 
 	if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){ ?>
 <div id="addBtn">
-	<img src="dist/img/new.png" alt="addBtn" onclick="$('#inputPage').toggle();$('body').scrollTop(0);$('input[name=newbuy]').focus();">
+	<img src="dist/img/new.png" alt="addBtn">
 </div>
 <?php } ?>
 

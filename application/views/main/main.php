@@ -1,6 +1,6 @@
 <div id="mainWrap">
 	<?php if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){  ?>
-	<div id="inputPage" class="clearfix">
+	<div id="inputPage">
 		<input type="text" name="newbuy" onkeypress="if(event.keyCode==13){textSubmit(); return false;}">
 		<div class="inputBtn" onclick="textSubmit()">등록</div>
 	</div>
@@ -12,7 +12,7 @@
 		<?php }else{ ?>
 
 			<?php foreach ($lists as $row) { ?>
-			<div class="list clearfix <?php 
+			<div class="list <?php 
 		if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){
 			 ?>log<?php } ?>">
 				<div class="info"><?php echo $row['text']; ?></div>
