@@ -8,7 +8,7 @@
     <meta name="description" content="살것 리스트">
 
     <!-- common css -->
-    <link rel="stylesheet" href="dist/css/common.css">
+    <link rel="stylesheet" href="dist/css/common.css?v=20190107">
 
     <!-- jquery -->
 	<script src="vendor/jquery-3.3.1.min.js" type="text/javascript"></script>
