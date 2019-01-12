@@ -52,7 +52,7 @@ function textSubmit(){
 				if(res=='success'){
 					$('#inputPage').hide();
 					$('input[name=newbuy]').val('');
-					listReload();
+					listReload(1);
 				}else{
 					alert(res);
 				}
@@ -72,9 +72,13 @@ function logout(){
 }
 
 //	리스트 새로고침
-function listReload(){
+function listReload(page){
 	$.ajax({
 		url:'./main/listReload',
+		data:{
+			page:page
+		},
+		type:'post',
 		success:(res)=>{
 			$('#listWrap').html(res);
 			$('#addBtn').removeClass('out');
@@ -86,6 +90,29 @@ function listReload(){
 }
 
 $(function(){
+
+	//	현재 페이지 확인
+	//	now , before
+	let section = 'now';
+
+	// 살것리스트 페이지
+	let now_Page = 1;
+	// 이전목록 페이지
+	let before_Page = 1;
+
+	listReload(1);
+
+	//무한스크롤 
+	$(window).scroll(function() {
+		if($("body").height() >= $(window).height()){
+			if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+				if(section == 'now'){
+
+				}
+	    	}	
+		}
+	});
+
 
 	//리스트 클릭시 구매 및 삭제 뜨게
 	let listClickCnt = 0;
@@ -187,6 +214,7 @@ $(function(){
 	$('#beforeList').on('touch click',function(){
 		if(!$(this).hasClass('before')){
 			$(this).addClass('before');
+			section = 'now';
 			$('#beforeList img').attr('src','dist/img/list02.png');
 			$.ajax({
 				url:'./main/before',
@@ -201,12 +229,11 @@ $(function(){
 			});
 		}else{
 			$(this).removeClass('before');
+			section = 'before';
 			$('#beforeList img').attr('src','dist/img/list01.png');
 			$('#logo').text('살것 리스트');
-			listReload();
+			listReload(1);
 		}
 	});
-
-	//무한스크롤 
 
 });

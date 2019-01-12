@@ -72,12 +72,14 @@ class Main extends CI_Controller {
 
 	//	리스트 새로고침 ajax
 	public function listReload(){
+		$page = $this->input->post('page');
+		$pagelist = 15;// 한번에 보여줄 페이지
 		if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){
 			$login = true;
 		}else{
 			$login = false;
 		}
-		$lists = $this->main_model->get_list();
+		$lists = $this->main_model->get_list($page,$pagelist);
 		$result = "";
 		if(count($lists)==0){
 			$result = "<div class='list nolist'>목록이 없습니다.</div>";
