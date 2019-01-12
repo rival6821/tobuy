@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>살것 리스트</title>
     <meta name="description" content="살것 리스트">
+    <link rel="icon" href="dist/img/favicon2.ico" type="image/x-icon">
 
     <!-- common css -->
     <link rel="stylesheet" href="dist/css/common.css?v=20190107">
@@ -21,8 +22,7 @@
             <div id="logout" class="log" onclick="javascript:logout();">로그아웃</div>
         <?php }else{ ?>
             <div id="login" class="log" onclick="javascript:modal('show');">로그인</div>
-        <?php } ?>        
-        
+        <?php } ?>
     </div>
 </header>
 <div id="loginModal">
