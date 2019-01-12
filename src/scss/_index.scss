@@ -10,7 +10,8 @@
         input{
             border:0;
             outline:0;
-            flex:4;
+            width:80%;
+            float:left;
             height:2.9rem;
             font-size:1.2rem;
             box-sizing: border-box;
@@ -18,7 +19,8 @@
         .inputBtn{
             display: block;
             cursor:pointer;
-            flex:1;
+            width:20%;
+            float:left;
             @include fix-height(2.9rem);
             text-align: center;
             background-color: $color-1;
