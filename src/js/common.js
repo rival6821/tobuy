@@ -113,6 +113,9 @@ $(function(){
 		}else{
 			$('#listWrap .list.on').removeClass('on');
 			$(this).addClass('on');
+			if(!$addBtn.hasClass('out')){
+				$addBtn.addClass('out');
+			}
 		}
 	});
 
@@ -199,7 +202,6 @@ $(function(){
 		}else{
 			$(this).removeClass('before');
 			$('#beforeList img').attr('src','dist/img/list01.png');
-			$('#addBtn').removeClass('out');
 			$('#logo').text('살것 리스트');
 			listReload();
 		}
