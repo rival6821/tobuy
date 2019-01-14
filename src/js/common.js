@@ -52,7 +52,7 @@ function textSubmit(){
 				if(res=='success'){
 					$('#inputPage').hide();
 					$('input[name=newbuy]').val('');
-					listReload(1);
+					listReload(1,15);
 				}else{
 					alert(res);
 				}
@@ -72,15 +72,26 @@ function logout(){
 }
 
 //	리스트 새로고침
-function listReload(page){
+function listReload(page,pagelist,type){
 	$.ajax({
 		url:'./main/listReload',
 		data:{
-			page:page
+			page:page,
+			pagelist:pagelist
 		},
 		type:'post',
+		dataType:'json',
 		success:(res)=>{
-			$('#listWrap').html(res);
+			if(type == 'first'){
+				$('#listWrap').html(res.lists);
+			}else{
+				if(res.cnt == 0){
+					document.getElementById('is_last').value = 'y';
+					$('#addBtn').removeClass('out');
+					return false;
+				}
+				$('#listWrap').append(res.lists);
+			}
 			$('#addBtn').removeClass('out');
 		},
 		error:(a,b,c)=>{
@@ -96,18 +107,23 @@ $(function(){
 	let section = 'now';
 
 	// 살것리스트 페이지
-	let now_Page = 1;
+	let page = 1;
 	// 이전목록 페이지
-	let before_Page = 1;
+	let beforePage = 1;
 
-	listReload(1);
+	// 한번에 보여줄 리스트 갯수
+	const pagelist = 15;
+
+	//	첫 화면 살것 리스트
+	listReload(page,pagelist,'first');
 
 	//무한스크롤 
 	$(window).scroll(function() {
 		if($("body").height() >= $(window).height()){
 			if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-				if(section == 'now'){
-
+				if(section == 'now' && document.getElementById('is_last').value != 'y'){
+					listReload(++page,pagelist,'notFirst');
+					console.warn('page',page);
 				}
 	    	}	
 		}

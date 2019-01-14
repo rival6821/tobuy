@@ -231,85 +231,87 @@ footer {
       text-align: center;
       background-color: #20A3FF;
       color: #fff; }
-  #mainWrap #listWrap .list {
-    height: 3rem;
-    border-top: 1px solid #ededed;
-    border-bottom: 1px solid #ededed;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    position: relative;
-    overflow: hidden; }
-    #mainWrap #listWrap .list .info {
+  #mainWrap #listWrap {
+    padding-bottom: 43px; }
+    #mainWrap #listWrap .list {
       height: 3rem;
-      line-height: 3rem;
-      float: left;
-      width: 100%;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      border-top: 1px solid #ededed;
+      border-bottom: 1px solid #ededed;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      position: relative;
       overflow: hidden; }
-    #mainWrap #listWrap .list.on .info {
-      width: calc( 100% - 6rem); }
-    #mainWrap #listWrap .list.nolist {
-      text-align: center;
+      #mainWrap #listWrap .list .info {
+        height: 3rem;
+        line-height: 3rem;
+        float: left;
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; }
+      #mainWrap #listWrap .list.on .info {
+        width: calc( 100% - 6rem); }
+      #mainWrap #listWrap .list.nolist {
+        text-align: center;
+        height: 3rem;
+        line-height: 3rem; }
+      #mainWrap #listWrap .list .clicked {
+        position: absolute;
+        top: 0;
+        right: -10rem;
+        width: 6rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-transition: right 0.3s;
+        transition: right 0.3s; }
+        #mainWrap #listWrap .list .clicked .buy, #mainWrap #listWrap .list .clicked .delete {
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
+          height: calc(3rem - 2px);
+          line-height: calc(3rem - 2px);
+          color: #fff;
+          text-align: center; }
+        #mainWrap #listWrap .list .clicked .buy {
+          background-color: #20A3FF; }
+        #mainWrap #listWrap .list .clicked .delete {
+          background-color: #999999; }
+      #mainWrap #listWrap .list.on .clicked {
+        right: 0rem; }
+    #mainWrap #listWrap .beforelist {
       height: 3rem;
-      line-height: 3rem; }
-    #mainWrap #listWrap .list .clicked {
-      position: absolute;
-      top: 0;
-      right: -10rem;
-      width: 6rem;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-transition: right 0.3s;
-      transition: right 0.3s; }
-      #mainWrap #listWrap .list .clicked .buy, #mainWrap #listWrap .list .clicked .delete {
-        -webkit-box-flex: 1;
-            -ms-flex: 1;
-                flex: 1;
+      border-top: 1px solid #ededed;
+      border-bottom: 1px solid #ededed;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      position: relative;
+      overflow: hidden; }
+      #mainWrap #listWrap .beforelist .info {
+        width: calc( 100% - 6rem);
+        height: 3rem;
+        line-height: 3rem;
+        float: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; }
+        #mainWrap #listWrap .beforelist .info span {
+          font-size: 0.8rem;
+          color: #fff;
+          padding: 0.1rem 0.5rem;
+          border-radius: 1rem;
+          margin-right: 0.6rem; }
+          #mainWrap #listWrap .beforelist .info span.cancel {
+            background-color: #999; }
+          #mainWrap #listWrap .beforelist .info span.buy {
+            background-color: #20A3FF; }
+      #mainWrap #listWrap .beforelist .optionDate {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 6rem;
         height: calc(3rem - 2px);
         line-height: calc(3rem - 2px);
-        color: #fff;
-        text-align: center; }
-      #mainWrap #listWrap .list .clicked .buy {
-        background-color: #20A3FF; }
-      #mainWrap #listWrap .list .clicked .delete {
-        background-color: #999999; }
-    #mainWrap #listWrap .list.on .clicked {
-      right: 0rem; }
-  #mainWrap #listWrap .beforelist {
-    height: 3rem;
-    border-top: 1px solid #ededed;
-    border-bottom: 1px solid #ededed;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    position: relative;
-    overflow: hidden; }
-    #mainWrap #listWrap .beforelist .info {
-      width: calc( 100% - 6rem);
-      height: 3rem;
-      line-height: 3rem;
-      float: left;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden; }
-      #mainWrap #listWrap .beforelist .info span {
+        text-align: right;
         font-size: 0.8rem;
-        color: #fff;
-        padding: 0.1rem 0.5rem;
-        border-radius: 1rem;
-        margin-right: 0.6rem; }
-        #mainWrap #listWrap .beforelist .info span.cancel {
-          background-color: #999; }
-        #mainWrap #listWrap .beforelist .info span.buy {
-          background-color: #20A3FF; }
-    #mainWrap #listWrap .beforelist .optionDate {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 6rem;
-      height: calc(3rem - 2px);
-      line-height: calc(3rem - 2px);
-      text-align: right;
-      font-size: 0.8rem;
-      color: #666; }
+        color: #666; }

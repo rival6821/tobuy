@@ -8,8 +8,13 @@ class Main_model extends CI_Model {
     }
 
     // 리스트 내용 가져오기
-    public function get_list($page,$pagelist){
-    	$sql = "select * from tb_list where is_buy = 'n' and is_delete = 'n' order by regdate desc";
+    public function get_list($page=1,$pagelist=15){
+        //  페이지 시작하는 부분
+        $page_s = ($page - 1)*$pagelist;
+    	$sql = "select * from tb_list 
+            where is_buy = 'n' and is_delete = 'n' 
+            order by regdate desc
+            limit $page_s,$pagelist";
     	return $this->db->query($sql)->result_array();
     }
 

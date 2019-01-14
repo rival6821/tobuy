@@ -11,9 +11,8 @@ class Main extends CI_Controller {
 	//	메인페이지
 	public function index()
 	{	
-		$data['lists'] = $this->main_model->get_list();
 		$this->load->view('template/header');
-		$this->load->view('main/main',$data);
+		$this->load->view('main/main');
 		$this->load->view('template/footer');
 	}
 
@@ -73,7 +72,7 @@ class Main extends CI_Controller {
 	//	리스트 새로고침 ajax
 	public function listReload(){
 		$page = $this->input->post('page');
-		$pagelist = 15;// 한번에 보여줄 페이지
+		$pagelist = $this->input->post('pagelist');
 		if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == 'true'){
 			$login = true;
 		}else{
@@ -97,7 +96,9 @@ class Main extends CI_Controller {
 			}
 			$result .= "</div>";
 		}
-		echo $result;
+		$return['cnt'] = count($lists);
+		$return['lists'] = $result;
+		echo json_encode($return,JSON_UNESCAPED_UNICODE);
 	}
 
 	//	이전 리스트 뿌려주기 ajax

@@ -6,5 +6,6 @@
 	</div>
 	<?php } ?>
 	<div id="listWrap"></div>
+	<input type="hidden" id="is_last">
 </div>
 <!-- mainWrap -->
