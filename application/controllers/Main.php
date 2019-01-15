@@ -98,7 +98,7 @@ class Main extends CI_Controller {
 		}
 		$return['cnt'] = count($lists);
 		$return['lists'] = $result;
-		echo json_encode($return,JSON_UNESCAPED_UNICODE);
+		echo json_encode($return);
 	}
 
 	//	이전 리스트 뿌려주기 ajax
