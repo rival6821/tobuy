@@ -188,7 +188,7 @@ $(function(){
 				type:'post',
 				success:(res)=>{
 					if(res=='success'){
-						listReload();
+						listReload(1,15,'first');
 					}else{
 						alert(res);
 					}
@@ -213,7 +213,7 @@ $(function(){
 				type:'post',
 				success:(res)=>{
 					if(res=='success'){
-						listReload();
+						listReload(1,15,'first');
 					}else{
 						alert(res);
 					}
@@ -248,7 +248,7 @@ $(function(){
 			section = 'before';
 			$('#beforeList img').attr('src','dist/img/list01.png');
 			$('#logo').text('살것 리스트');
-			listReload(1);
+			listReload(1,15,'first');
 		}
 	});
 
