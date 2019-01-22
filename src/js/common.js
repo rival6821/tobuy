@@ -52,7 +52,7 @@ function textSubmit(){
 				if(res=='success'){
 					$('#inputPage').hide();
 					$('input[name=newbuy]').val('');
-					listReload('now',1,15,'first');
+					listReload(1,15,'first');
 				}else{
 					alert(res);
 				}
@@ -72,7 +72,7 @@ function logout(){
 }
 
 //	리스트 새로고침
-function listReload(section,page,pagelist,type){
+function listReload(page,pagelist,type){
 	$.ajax({
 		url:'./main/listReload',
 		data:{
@@ -115,14 +115,14 @@ $(function(){
 	const pagelist = 15;
 
 	//	첫 화면 살것 리스트
-	listReload('now',nowpage,pagelist,'first');
+	listReload(nowpage,pagelist,'first');
 
 	//무한스크롤 
 	$(window).scroll(function() {
 		if($("body").height() >= $(window).height()){
 			if ($(window).scrollTop() == $(document).height() - $(window).height()) {
 				if(section == 'now' && document.getElementById('is_last').value != 'y'){
-					listReload('now',++nowpage,pagelist,'notFirst');
+					listReload(++nowpage,pagelist,'notFirst');
 					console.warn('page',nowpage);
 				}
 	    	}	
@@ -188,7 +188,7 @@ $(function(){
 				type:'post',
 				success:(res)=>{
 					if(res=='success'){
-						listReload('now',1,15,'first');
+						listReload(1,15,'first');
 					}else{
 						alert(res);
 					}
@@ -213,7 +213,7 @@ $(function(){
 				type:'post',
 				success:(res)=>{
 					if(res=='success'){
-						listReload('now',1,15,'first');
+						listReload(1,15,'first');
 					}else{
 						alert(res);
 					}
@@ -248,7 +248,7 @@ $(function(){
 			section = 'now';
 			$('#beforeList img').attr('src','dist/img/list01.png');
 			$('#logo').text('살것 리스트');
-			listReload('now',1,15,'first');
+			listReload(1,15,'first');
 		}
 	});
 
