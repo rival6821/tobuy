@@ -52,7 +52,7 @@ function textSubmit(){
 				if(res=='success'){
 					$('#inputPage').hide();
 					$('input[name=newbuy]').val('');
-					listReload(1,15);
+					listReload('now',1,15,'first');
 				}else{
 					alert(res);
 				}
@@ -72,7 +72,7 @@ function logout(){
 }
 
 //	리스트 새로고침
-function listReload(page,pagelist,type){
+function listReload(section,page,pagelist,type){
 	$.ajax({
 		url:'./main/listReload',
 		data:{
@@ -107,7 +107,7 @@ $(function(){
 	let section = 'now';
 
 	// 살것리스트 페이지
-	let page = 1;
+	let nowpage = 1;
 	// 이전목록 페이지
 	let beforePage = 1;
 
@@ -115,15 +115,15 @@ $(function(){
 	const pagelist = 15;
 
 	//	첫 화면 살것 리스트
-	listReload(page,pagelist,'first');
+	listReload('now',nowpage,pagelist,'first');
 
 	//무한스크롤 
 	$(window).scroll(function() {
 		if($("body").height() >= $(window).height()){
 			if ($(window).scrollTop() == $(document).height() - $(window).height()) {
 				if(section == 'now' && document.getElementById('is_last').value != 'y'){
-					listReload(++page,pagelist,'notFirst');
-					console.warn('page',page);
+					listReload('now',++nowpage,pagelist,'notFirst');
+					console.warn('page',nowpage);
 				}
 	    	}	
 		}
@@ -188,7 +188,7 @@ $(function(){
 				type:'post',
 				success:(res)=>{
 					if(res=='success'){
-						listReload(1,15,'first');
+						listReload('now',1,15,'first');
 					}else{
 						alert(res);
 					}
@@ -213,7 +213,7 @@ $(function(){
 				type:'post',
 				success:(res)=>{
 					if(res=='success'){
-						listReload(1,15,'first');
+						listReload('now',1,15,'first');
 					}else{
 						alert(res);
 					}
@@ -230,7 +230,7 @@ $(function(){
 	$('#beforeList').on('touch click',function(){
 		if(!$(this).hasClass('before')){
 			$(this).addClass('before');
-			section = 'now';
+			section = 'before';
 			$('#beforeList img').attr('src','dist/img/list02.png');
 			$.ajax({
 				url:'./main/before',
@@ -245,10 +245,10 @@ $(function(){
 			});
 		}else{
 			$(this).removeClass('before');
-			section = 'before';
+			section = 'now';
 			$('#beforeList img').attr('src','dist/img/list01.png');
 			$('#logo').text('살것 리스트');
-			listReload(1,15,'first');
+			listReload('now',1,15,'first');
 		}
 	});
 
