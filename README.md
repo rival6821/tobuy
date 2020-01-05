@@ -3,4 +3,4 @@
 php - codeignitor
 mysql
 
-http://tobuy.rival6821.xyz
+https://tobuy.ilhoon.kr
